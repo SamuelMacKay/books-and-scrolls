@@ -9,3 +9,9 @@
 .fa-book-open:before {
     padding-left: 15px;
 }
+
+/*---------------------------------------------------------- Font Size */
+
+.font-size-large {
+    font-size: x-large;
+}
