@@ -133,7 +133,7 @@ This is a sample of shots of what the site looks like on different devices.
 
 ### Bugs
 #### Bug 1
-- 
+- My JS to check that both passwords match on the sign up page is breaking my log in page js
 
 Old code:
 ```

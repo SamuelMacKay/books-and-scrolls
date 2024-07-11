@@ -1,5 +1,5 @@
 let password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
+let confirm_password = document.getElementById("confirm_password");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -9,8 +9,10 @@ function validatePassword(){
   }
 }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+
+// password.onchange = validatePassword;
+// confirm_password.onkeyup = validatePassword;
+
 
 
 $(document).ready(function(){
