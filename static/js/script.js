@@ -17,4 +17,5 @@ function validatePassword(){
 
 $(document).ready(function(){
     $('.sidenav').sidenav();
+    $('select').formSelect();
   });
