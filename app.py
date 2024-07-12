@@ -81,6 +81,13 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    # allows logged in user to change password
+    return render_template("change_password.html")
+    
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the sessions user's usernam from the db
