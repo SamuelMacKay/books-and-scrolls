@@ -31,8 +31,11 @@
     line-height: 2;
 }
 
-/*---------------------------------------------------------- review images */
-/* .card .card-image img {
-    max-width: 500px;
+/*---------------------------------------------------------- review cards */
+.card .card-image img {
     max-height: 500px;
-} */
+}
+
+.card {
+    max-height: 800px;
+}

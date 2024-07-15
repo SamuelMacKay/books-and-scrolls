@@ -90,7 +90,7 @@ def change_password():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the sessions user's usernam from the db
+    # grab the sessions user's username from the db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -108,8 +108,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_review")
+@app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    if request.method == "POST":
+        review = {
+            "title": request.form.get("title"),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre"),
+            "rating": request.form.get("rating"),
+            "summary": request.form.get("summary"),
+            "cover_art": request.form.get("cover_art"),
+            "user_created": session["user"],
+
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review has been successfully added!")
+        return redirect(url_for("get_reviews"))
+
     return render_template("add_review.html")
 
 if __name__ == "__main__":
