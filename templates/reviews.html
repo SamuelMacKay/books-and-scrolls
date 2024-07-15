@@ -19,8 +19,8 @@
                         <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><strong>{{ review.title.title() }}</strong><i class="fas fa-x right"></i></span>
                         <p><strong>Summary:</strong> {{ review.summary }}</p>
-                        <a class="waves-effect waves-light btn light-green darken-1"><i class="fas fa-cog"></i></a>
-                        <a class="waves-effect waves-light btn red"><i class="fas fa-trash"></i></a>
+                        <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn left light-green darken-1"><i class="fas fa-cog"></i></a>
+                        <a href="#" class="btn right red darken-1"><i class="fas fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
