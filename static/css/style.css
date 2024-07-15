@@ -14,6 +14,10 @@
     text-transform: uppercase;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 @media only screen and (max-width: 580px) {
     nav .brand-logo {
         font-size: medium;

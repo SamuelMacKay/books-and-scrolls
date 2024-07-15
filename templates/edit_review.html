@@ -9,8 +9,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-book prefix light-green-text text-darken-2"></i>
-                <input id="title" name="title" type="text" minlength="1"
-                    maxlength="40" class="validate" required>
+                <input id="title" name="title" type="text" minlength="1" maxlength="40"
+                    value="{{ review.title.title() }}" class="validate" required>
                 <label for="title">Title...</label>
             </div>
         </div>
@@ -18,7 +18,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-user-circle prefix light-green-text text-darken-2"></i>
-                <input id="author" name="author" type="text" class="validate" required>
+                <input id="author" name="author" type="text" class="validate"
+                    value="{{ review.author.title() }}" required>
                 <label for="author">Author...</label>
             </div>
         </div>
@@ -26,7 +27,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-masks-theater prefix light-green-text text-darken-2"></i>
-                <input id="genre" name="genre" type="text" maxlength="30" class="validate" required>
+                <input id="genre" name="genre" type="text" maxlength="30" class="capitalize validate"
+                    value="{{ review.genre }}" required>
                 <label for="genre">Genre...</label>
             </div>
         </div>
@@ -35,17 +37,17 @@
             <div class="input-field col s12">
                 <i class="fas fa-star prefix light-green-text text-darken-2"></i>
                 <select id="rating" name="rating" class="validate" required>
-                    <option value="" disabled selected>Rate out of 10!</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                    <option value="" disable>Rate out of 10!</option>
+                    <option value="1" {% if review.rating == "1" %}selected{% endif %}>1</option>
+                    <option value="2" {% if review.rating == "2" %}selected{% endif %}>2</option>
+                    <option value="3" {% if review.rating == "3" %}selected{% endif %}>3</option>
+                    <option value="4" {% if review.rating == "4" %}selected{% endif %}>4</option>
+                    <option value="5" {% if review.rating == "5" %}selected{% endif %}>5</option>
+                    <option value="6" {% if review.rating == "6" %}selected{% endif %}>6</option>
+                    <option value="7" {% if review.rating == "7" %}selected{% endif %}>7</option>
+                    <option value="8" {% if review.rating == "8" %}selected{% endif %}>8</option>
+                    <option value="9" {% if review.rating == "9" %}selected{% endif %}>9</option>
+                    <option value="10" {% if review.rating == "10" %}selected{% endif %}>10</option>
                 </select>
             </div>
         </div>
@@ -54,7 +56,9 @@
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-green-text text-darken-2"></i>
                 <textarea id="summary" name="summary" minlength="5" maxlength="500"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>
+                    {{- review.summary -}}
+                </textarea>
                 <label for="summary">Summary...</label>
             </div>
         </div>
@@ -62,13 +66,18 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-green-text text-darken-2"></i>
-                <input id="cover_art" name="cover_art" type="text" class="validate" required>
+                <input id="cover_art" name="cover_art" type="text" class="validate"
+                    value="{{ review.cover_art }}" required>
                 <label for="cover_art">Image URL...</label>
             </div>
         </div>
         <!-- submit button -->
         <div class="row">
             <div class="col s12 center-align">
+                <!-- cancel button -->
+                 <a href="{{ url_for('get_reviews' )}}" class="btn-large red darken-2 text-shadow">
+                    Cancel
+                 </a>
                 <button type="submit" class="btn-large light-green darken-2 text-shadow">
                     Edit Review <i class="fas fa-pencil right"></i>
                 </button>
