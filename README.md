@@ -147,20 +147,27 @@ New code:
 
 #### Bug 2 
 
-- 
+- The cards for the review lay out get messed up at larger than medium screen size
+- Added a set height to the cards
 
 Old code:
 ```
-
+<div class="col s12 m6 xl4">
 ```
+
 New code:
 
 ```
-
+<div class="col s12 m6 l4 xl3">
 ```
-
+CSS:
+```
+.card-height {
+    height: 750px;
+}
+```
 #### Bug 3 
-- 
+- If the title, author or author doesnt have any spaces, the word will stretch out over the card.
 
 Old code:
 ```
@@ -173,7 +180,7 @@ New code:
 ```
 
 #### Bug 4
-- 
+- my delete button is deleting the first review in the line rather than the one you click on.
 
 Old code:
 ```
