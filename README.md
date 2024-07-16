@@ -61,7 +61,7 @@ User Story Number - <br>
 
 - __Log in/Sign up/Log out/profile__
 
-  - Will have a option to create an account, log in, or log out.
+  - An option to create an account, log in, or log out.
   - A page you can view your logged in profile information, all your reviews as well as edit your password. 
 
 ![Log in/Sign up/Log out]()
@@ -69,14 +69,15 @@ User Story Number - <br>
 
 - __Add reviews__
 
-  - Will have a form that gives you all the necessary information to fill out, to make an effective review.
-  - a affiliate link to a place to purchase the book directly from the review.
+  - A form that gives you all the necessary information to fill out, to make an effective review.
+  - an affiliate link to a place to purchase the book directly from the review.
 
 ![Add review]()
 ![Add review]()
 
 - __Edit reviews__
   - A edit and delete button that will only show up to the admin or the creator of that content.
+  - Links to a form that auto completes with the info of the review selected.
 
 ![Edit reviews]()
 ![Edit reviews]()
@@ -84,7 +85,9 @@ User Story Number - <br>
 
 ### Features Left to Implement
 
-- 
+- a way to rate reviews
+- have comment board/forum
+
 
 ## Testing
 
