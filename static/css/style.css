@@ -40,6 +40,6 @@
     max-height: 500px;
 }
 
-.card {
-    max-height: 800px;
+.card-height {
+    height: 750px;
 }
