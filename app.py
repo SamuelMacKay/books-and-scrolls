@@ -94,10 +94,13 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    # grab the list of reviews from the db
+    reviews = list(mongo.db.reviews.find())
 
-    return redirect(url_for("login"))  
+    if session["user"]:
+        return render_template("profile.html", username=username,  reviews=reviews)
+
+    return redirect(url_for("login")) 
 
 
 @app.route("/logout")
@@ -146,6 +149,13 @@ def edit_review(review_id):
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("edit_review.html", review=review)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
+    flash("Review has been successfully deleted!")
+    return redirect(url_for("get_reviews"))
 
 
 if __name__ == "__main__":

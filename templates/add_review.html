@@ -18,7 +18,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-user-circle prefix light-green-text text-darken-2"></i>
-                <input id="author" name="author" type="text" class="validate" required>
+                <input id="author" name="author" type="text" minlength="1"
+                    maxlength="50"class="validate" required>
                 <label for="author">Author...</label>
             </div>
         </div>
@@ -26,7 +27,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-masks-theater prefix light-green-text text-darken-2"></i>
-                <input id="genre" name="genre" type="text" maxlength="30" class="validate" required>
+                <input id="genre" name="genre" type="text" maxlength="40" class="validate" required>
                 <label for="genre">Genre...</label>
             </div>
         </div>
