@@ -66,6 +66,11 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-image prefix light-green-text text-darken-2"></i>
+                <!-- tool tip for image help -->
+                <i class="tooltipped fas fa-circle-info right"
+                    data-tooltip="Having trouble? Try searching for an image, right click it, 
+                        select 'open image in a new tab' and copy/pasting the URL(the web address 
+                        at the top of the page) here!"></i>
                 <input id="cover_art" name="cover_art" type="text" class="validate"
                     value="{{ review.cover_art }}" required>
                 <label for="cover_art">Image URL...</label>

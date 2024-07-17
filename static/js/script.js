@@ -19,6 +19,7 @@ $(document).ready(function () {
   $(".collapsible").collapsible();
   $("select").formSelect();
   $('.modal').modal();
+  $('.tooltipped').tooltip();
   
   validateMaterializeSelect();
   function validateMaterializeSelect() {
