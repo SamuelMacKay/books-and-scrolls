@@ -24,6 +24,14 @@
     }
 }
 
+.material-tooltip {
+    font-size: x-large;
+    font-weight: 500;
+    background-color: transparent;
+    color: black;
+    position: absolute;
+}
+
 /*---------------------------------------------------------- Book Icon */
 
 .fa-book-open:before {
@@ -42,4 +50,10 @@
 
 .card-height {
     height: 750px;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
