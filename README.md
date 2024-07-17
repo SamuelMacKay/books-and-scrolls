@@ -170,7 +170,7 @@ CSS:
 }
 ```
 #### Bug 3 
-- If the title, author or author doesnt have any spaces, the word will stretch out over the card.
+- If the title, author or author doesnt have any spaces, but is capped out on the word count, the word will stretch out over the card.
 
 Old code:
 ```
@@ -196,7 +196,7 @@ New code:
 ```
 
 #### Bug 5
-- 
+- my search function blocks stop words, so i cant find books titled things like "it"
 
 Old code:
 ```
