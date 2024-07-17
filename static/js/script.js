@@ -1,26 +1,16 @@
-let password = document.getElementById("password")
-let confirm_password = document.getElementById("confirm_password");
-
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-
-// password.onchange = validatePassword;
-// confirm_password.onkeyup = validatePassword;
-
-
 $(document).ready(function () {
+    let reviewId;
   $(".sidenav").sidenav({edge: "right"});
   $(".collapsible").collapsible();
   $("select").formSelect();
   $('.modal').modal();
   $('.tooltipped').tooltip();
-  
+  $('.delete-btn').click(function(){
+        reviewId = $(this).data('review-id');
+        console.log("test", reviewId);
+    });
+  $('#confirm-delete').click(function(){
+  $('#confirm-delete').attr("href", "/delete_review/" + reviewId)});
   validateMaterializeSelect();
   function validateMaterializeSelect() {
       let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
