@@ -75,3 +75,7 @@
 .modal {
     padding-bottom: 24px;
 }
+
+.card h5 {
+    padding-bottom: 5px;
+}
