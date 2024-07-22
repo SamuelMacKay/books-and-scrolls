@@ -136,16 +136,17 @@ This is a sample of shots of what the site looks like on different devices.
 
 ### Bugs
 #### Bug 1
-- My JS to check that both passwords match on the sign up page is breaking my log in page js
+- My JS to check that both passwords match on the sign up page is breaking my log in page js.
+- Moved the code into its own .js file and injected it directly into the sign up page, so the function only loads on register.html
 
 Old code:
 ```
-
+N/A
 ```
 New code:
-
+add to line 53 in register.html
 ```
-
+<script src="{{ url_for('static', filename='js/password_validate.js') }}"></script>
 ```
 
 #### Bug 2 
@@ -161,38 +162,119 @@ Old code:
 New code:
 
 ```
-<div class="col s12 m6 l4 xl3">
+<div class="col s12 m6 l4">
 ```
 CSS:
 ```
 .card-height {
-    height: 750px;
+    height: 800px;
 }
 ```
 #### Bug 3 
 - If the title, author or author doesnt have any spaces, but is capped out on the word count, the word will stretch out over the card.
+- made a new class with a CSS style to truncate long words, and added a tool tip that reveals the whole word when overed over
 
 Old code:
 ```
-
+<div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                                <h4 class="tooltipped" data-position="top" data-tooltip="{{ review.title.title() }}">{{ review.title.title() }}<i class="fas fa-chevron-up right"></i></h4>
+                            </span>
+                            <p><strong>Author:</strong> {{ review.author.title() }}</p>
+                            <p><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
+                            <p><strong>Rating:</strong> {{ review.rating }}/10</p>
+                            <p><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
+                            {% if review.affiliate_link %}
+                            <br>
+                            <a href="{{ review.affiliate_link }}" target="_blank" class="uppercase">Buy Now!</a>
+                            {% endif %}
+                        </div>
 ```
 New code:
 
 ```
+<div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                                <h4 class="tooltipped truncate" data-position="top" data-tooltip="{{ review.title.title() }}">{{ review.title.title() }}<i class="fas fa-chevron-up right"></i></h4>
+                            </span>
+                            <p class="truncate"><strong>Author:</strong> {{ review.author.title() }}</p>
+                            <p class="truncate"><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
+                            <p><strong>Rating:</strong> {{ review.rating }}/10</p>
+                            <p class="truncate"><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
+                            {% if review.affiliate_link %}
+                            <br>
+                            <a href="{{ review.affiliate_link }}" target="_blank" class="uppercase">Buy Now!</a>
+                            {% endif %}
+                        </div>
+```
 
+```
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 ```
 
 #### Bug 4
 - my delete button is deleting the first review in the line rather than the one you click on.
+- the _id needed to be passed through to the modal, so it would find the correct review rather than just the first one on the list.
 
 Old code:
 ```
+<!-- Modal Trigger -->
+                                <a href="#deleteReviewModal"
+                                    class="btn right red darken-1 modal-trigger"><i class="fas fa-trash"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="deleteReviewModal" class="modal">
+        <div class="modal-content">
+            <h4 class="center">Are you sure?</h4>
+            <a href="#" class="modal-close light-green darken-2 btn-large">Cancel</a>
+            <a href="#" id="confirm-delete"
+                class="red darken-1 btn right">Delete Review</a>
+        </div>
+    </div>
 
 ```
 New code:
 
 ```
+<!-- Modal Trigger -->
+                                <a href="#deleteReviewModal"
+                                    class="btn right red darken-1 modal-trigger delete-btn" data-review-id="{{ review._id }}"><i class="fas fa-trash"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
 
+    <!-- Modal Structure -->
+    <div id="deleteReviewModal" class="modal">
+        <div class="modal-content">
+            <h4 class="center">Are you sure?</h4>
+            <a href="#" class="modal-close light-green darken-2 btn-large">Cancel</a>
+            <a href="#" id="confirm-delete"
+                class="red darken-1 btn right">Delete Review</a>
+        </div>
+    </div>
+
+```
+
+```
+$('.delete-btn').click(function(){
+        reviewId = $(this).data('review-id');
+    });
+  $('#confirm-delete').click(function(){
+  $('#confirm-delete').attr("href", "/delete_review/" + reviewId)});
+  validateMaterializeSelect();
 ```
 
 #### Bug 5
@@ -209,15 +291,22 @@ New code:
 ```
 
 #### Bug 6
-- 
+- my flash messages were breaking the layout at smaller screen sizes
+- added a max width for the flashes, so it didn't try to put it all on a single line
 
 Old code:
 ```
+<div class="row flashes">
+                        <h4 class="light-green lighten-4 center-align">{{ message }}</h4>
+                    </div>
 
 ```
 New code:
 
 ```
+<div class="row flashes s12">
+                        <h4 class="light-green lighten-4 center-align">{{ message }}</h4>
+                    </div>
 
 ```
 

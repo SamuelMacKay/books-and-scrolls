@@ -21,33 +21,38 @@
 
     <div class="row">
         {% for review in reviews %}
-                <div class="col s12 m6 l4 xl3">
+                <div class="col s12 m6 xl4">
                     <div class="card card-height">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="{{ review.cover_art }}">
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">
-                                <h4 class="tooltipped truncate" data-position="top" data-tooltip="{{ review.title.title() }}">{{ review.title.title() }}<i class="fas fa-chevron-up right"></i></h4>
+                            <span class="card-title activator button-floating halfway-fab grey-text text-darken-4">
+                                <p><i class="fas fa-bars right"></i></p>
                             </span>
-                            <p><strong>Author:</strong> {{ review.author.title() }}</p>
-                            <p><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
+                            <h5 class="truncate"><strong>{{ review.title.title() }}</strong></h5>
+                            <p class="truncate"><strong>Author:</strong> {{ review.author.title() }}</p>
+                            <p class="truncate"><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
                             <p><strong>Rating:</strong> {{ review.rating }}/10</p>
-                            <p><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
+                            <p class="truncate"><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
                             {% if review.affiliate_link %}
-                            <br>
-                            <a href="{{ review.affiliate_link }}" target="_blank" class="uppercase">Buy Now!</a>
+                            <div class="spacing"></div>
+                            <a href="{{ review.affiliate_link }}" target="_blank" id="fix-btn-location" class="uppercase btn light-green darken-2">Buy Now!</a>
                             {% endif %}
                         </div>
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4"><strong>{{ review.title.title() }}</strong><i class="fas fa-x right"></i></span>
                             <p><strong>Summary:</strong> {{ review.summary }}</p>
+                            {% if review.affiliate_link %}
+                            <div class="spacing"></div>
+                            <a href="{{ review.affiliate_link }}" target="_blank" id="fix-btn-location" class="uppercase btn light-green darken-2">Buy Now!</a>
+                            {% endif %}
                             {% if session["user"] == review.user_created or session["user"] == "admin" %}
                                 <a href="{{ url_for('edit_review', review_id=review._id) }}"
                                     class="btn left light-green darken-1"><i class="fas fa-cog"></i></a>
                                 <!-- Modal Trigger -->
                                 <a href="#deleteReviewModal"
-                                    class="btn right red darken-1 modal-trigger delete-btn" data-review-id="{{ review._id }}"><i class="fas fa-trash"></i></a>
+                                    class="btn right red darken-1 modal-trigger delete-btn btn-small" data-review-id="{{ review._id }}"><i class="fas fa-trash"></i></a>
                             {% endif %}
                         </div>
                     </div>
@@ -59,9 +64,10 @@
     <div id="deleteReviewModal" class="modal">
         <div class="modal-content">
             <h4 class="center">Are you sure?</h4>
-            <a href="#" class="modal-close light-green darken-2 btn-large">Cancel</a>
-            <a href="#" id="confirm-delete"
+            <h5 class="center"> This will delete the review PERMANENTLY!</h5>
+            <a href="{{ url_for('profile', username=session['user']) }}" id="confirm-delete"
                 class="red darken-1 btn right">Delete Review</a>
+            <a href="#" class="modal-close light-green darken-2 btn right">Cancel</a>
         </div>
     </div>
    
