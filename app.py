@@ -75,7 +75,6 @@ def login():
                     return redirect(
                         url_for("profile", username=session["user"]))
                     
-                    
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -93,7 +92,6 @@ def change_password():
     # allows logged in user to change password
     return render_template("change_password.html")
     
-
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -141,16 +139,25 @@ def add_review():
 @app.route("/edit_review<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
-        submit = {
-            "title": request.form.get("title"),
-            "author": request.form.get("author"),
-            "genre": request.form.get("genre"),
-            "rating": request.form.get("rating"),
-            "summary": request.form.get("summary"),
-            "cover_art": request.form.get("cover_art"),
-            "affiliate_link": request.form.get("affiliate_link")            
-
-        }
+        if session["user"] == "admin": 
+            submit = {
+                "title": request.form.get("title"),
+                "author": request.form.get("author"),
+                "genre": request.form.get("genre"),
+                "rating": request.form.get("rating"),
+                "summary": request.form.get("summary"),
+                "cover_art": request.form.get("cover_art"),
+                "affiliate_link": request.form.get("affiliate_link")
+            }
+        else:
+            submit = {
+                "title": request.form.get("title"),
+                "author": request.form.get("author"),
+                "genre": request.form.get("genre"),
+                "rating": request.form.get("rating"),
+                "summary": request.form.get("summary"),
+                "cover_art": request.form.get("cover_art"),
+            }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {"$set": submit})
         flash("Review has been successfully updated!")
 
