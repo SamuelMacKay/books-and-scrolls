@@ -148,7 +148,7 @@ def edit_review(review_id):
             "rating": request.form.get("rating"),
             "summary": request.form.get("summary"),
             "cover_art": request.form.get("cover_art"),
-            "user_created": session["user"],
+            "affiliate_link": request.form.get("affiliate_link")            
 
         }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {"$set": submit})

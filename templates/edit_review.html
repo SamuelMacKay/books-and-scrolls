@@ -76,6 +76,17 @@
                 <label for="cover_art">Image URL...</label>
             </div>
         </div>
+        <!-- add affiliate link -->
+         {% if session["user"] == "admin" %}
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-link prefix light-green-text text-darken-2"></i>
+                <input id="affiliate_link" name="affiliate_link" type="text" class="validate"
+                    value="{{ review.affiliate_link }}">
+                <label for="affiliate_link">Affilate Link...</label>
+            </div>
+        </div>
+        {% endif %}
         <!-- submit button -->
         <div class="row">
             <div class="col s12 center-align">

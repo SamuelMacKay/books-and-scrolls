@@ -34,6 +34,10 @@
                             <p><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
                             <p><strong>Rating:</strong> {{ review.rating }}/10</p>
                             <p><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
+                            {% if review.affiliate_link %}
+                            <br>
+                            <a href="{{ review.affiliate_link }}" target="_blank" class="uppercase">Buy Now!</a>
+                            {% endif %}
                         </div>
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4"><strong>{{ review.title.title() }}</strong><i class="fas fa-x right"></i></span>
