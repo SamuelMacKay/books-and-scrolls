@@ -10,6 +10,10 @@
     font-size: x-large;
 }
 
+.card .card-title {
+    font-size: 13px;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -45,15 +49,29 @@
 
 /*---------------------------------------------------------- review cards */
 .card .card-image img {
-    max-height: 500px;
+    height: 450px;
 }
 
 .card-height {
-    height: 750px;
+    height: 800px;
 }
 
 .truncate {
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.spacing {
+    height: 5px;
+}
+
+#fix-btn-location {
+    position: absolute;
+    bottom: 15px;
+    left: 24px;
+}
+
+.modal {
+    padding-bottom: 24px;
 }
