@@ -90,6 +90,7 @@ def login():
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password():
     # allows logged in user to change password
+
     return render_template("change_password.html")
     
 

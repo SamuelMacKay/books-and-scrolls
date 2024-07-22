@@ -18,7 +18,7 @@
     <div class="row">
         {% if reviews|length > 0 %}
             {% for review in reviews %}
-                {% if session["user"] == review.user_created or session["user"] == "admin" %}
+                {% if session["user"] == review.user_created %}
                 <div class="col s12 m6 xl4">
                     <div class="card card-height">
                         <div class="card-image waves-effect waves-block waves-light">
