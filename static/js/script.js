@@ -7,7 +7,6 @@ $(document).ready(function () {
   $('.tooltipped').tooltip();
   $('.delete-btn').click(function(){
         reviewId = $(this).data('review-id');
-        console.log("test", reviewId);
     });
   $('#confirm-delete').click(function(){
   $('#confirm-delete').attr("href", "/delete_review/" + reviewId)});
