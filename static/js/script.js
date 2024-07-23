@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let reviewId;
-  $(".sidenav").sidenav({edge: "right"});
+  $(".sidenav").sidenav();
   $(".collapsible").collapsible();
   $("select").formSelect();
   $('.modal').modal();
