@@ -2,12 +2,12 @@
 
 Books and scrolls is a website for avid readers who want a suggestion for a new book/series to read, and also be able to suggest books to other people when they make an account.
 
-![Responsive Mockup](assets/media/final-mockup.png)
+![Responsive Mockup](media/responsive-mockup.png)
 
 ## User Stories 
 |Story No.|Story|
 | ------------- | ------------- |
-|1| As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. |
+|1| As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attatched to them. |
 |2|As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. |
 |3|As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information.|
 |4|As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br> <br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. |
@@ -19,12 +19,13 @@ Books and scrolls is a website for avid readers who want a suggestion for a new 
 Below are the designs that I can use to build the site. I have used the user story numbers to link where I can meet the goal in my design. This will help me to think about the users needs as I build the page.
 
 ### Home Page Design<br>
-User Story Number - <br>
-![Home Page Design]()
+User Story Number - 1, 2 <br>
+![Home Page Design](media/home-page.png)
 
 ### Sign up Page Design<br>
-User Story Number - <br>
-![Sign up Page Design]()
+User Story Number - 3 <br>
+![Sign up Page Design](media/register-page.png)
+![Sign up Page Design](media/profile-page-with-edit-and-delete.png)
 
 ### log in Page Design<br>
 User Story Number - <br>
@@ -32,7 +33,11 @@ User Story Number - <br>
 
 ### add review Page Design<br>
 User Story Number - <br>
-![Add review Page Design]()
+![Add review Page Design](media/add_review-page.png)
+
+### edit review Page Design<br>
+User Story Number - <br>
+![Add review Page Design](media/edit_review-page.png)
 
 
 
@@ -370,7 +375,7 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 ### Local Deployment
 1. Sign up to [Gitpod](https://gitpod.io/)
 2. Download the Gitpod browser extension.
-3. On GitHub.com, navigate to the [SamuelMacKay/](https://github.com/SamuelMacKay/books-and-scrolls) repository.
+3. On GitHub.com, navigate to the [SamuelMacKay/books-and-scrolls](https://github.com/SamuelMacKay/books-and-scrolls) repository.
 4. Above the list of files click the button that says 'Gitpod'.
 
 ### Remote Deployment 
