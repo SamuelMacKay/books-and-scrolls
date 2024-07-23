@@ -1,6 +1,6 @@
 # Books and Scrolls
 
-Books and scrolls is a website for avid readers who want a suggestion for a new book/series to read, and also be able to suggest books to other people when they make an account.
+Books and scrolls is a website for avid readers who want a suggestion for a new book/series to read, with affliate links directly to a place to buy the books and also be able to suggest books to other people when they make an account. 
 
 ![Responsive Mockup](media/responsive-mockup.png)
 
@@ -20,24 +20,27 @@ Below are the designs that I can use to build the site. I have used the user sto
 
 ### Home Page Design<br>
 User Story Number - 1, 2 <br>
-![Home Page Design](media/home-page.png)
+![Home Page Design](media/home-page-wireframe.png)
 
 ### Sign up Page Design<br>
 User Story Number - 3 <br>
-![Sign up Page Design](media/register-page.png)
-![Sign up Page Design](media/profile-page-with-edit-and-delete.png)
+![Sign up Page Design](media/register-page-wireframe.png)
 
-### log in Page Design<br>
-User Story Number - <br>
-![Log in Page Design]()
+### Log In Page Design<br>
+User Story Number - 3 <br>
+![Log in Page Design](media/login-page-wireframe.png)
 
-### add review Page Design<br>
-User Story Number - <br>
-![Add review Page Design](media/add_review-page.png)
+### Add/edit Review Page Design<br>
+User Story Number - 4 <br>
+![Add review Page Design](media/add-edit-review-page-wireframe.png)
 
-### edit review Page Design<br>
-User Story Number - <br>
-![Add review Page Design](media/edit_review-page.png)
+### Profile Page Design<br>
+User Story Number - 5 <br>
+![Add review Page Design](media/profile-page-wireframe.png)
+
+### Change Password Page Design<br>
+User Story Number - 5 <br>
+![Add review Page Design](media/add-edit-review-page-wireframe.png)
 
 
 
@@ -52,40 +55,46 @@ User Story Number - <br>
   - A navbar that will link to all pages, and will show relevent options based on weather you are logged in or not.
   - A mobile friendly alternative at smaller screen sizes.
 
-![Nav Bar]()
-![Nav Bar]()
+![Nav Bar](media/logged-in-navbar.png)
+![Nav Bar](media/logged-out-navbar.png)
 
 - __Home page__
 
   - Will have access to all current reviews on the website for anyone, weather you are logged in or not.
   - Can only edit/delete reviews as admin or the creator of the review.
-  - ability to upvote a review
 
-![Home Page]()
-![Home Page]()
+![Home Page](media/home-page.png)
+![Home Page](media/profile-page-with-edit-and-delete.png)
 
 - __Log in/Sign up/Log out/profile__
 
   - An option to create an account, log in, or log out.
   - A page you can view your logged in profile information, all your reviews as well as edit your password. 
 
-![Log in/Sign up/Log out]()
-![Profile]()
+![Log in/Sign up/Log out](media/login_page.png)
+![Profile](media/profile-page-with-edit-and-delete.png)
+![Profile](media/profile-page.png)
 
 - __Add reviews__
 
   - A form that gives you all the necessary information to fill out, to make an effective review.
   - an affiliate link to a place to purchase the book directly from the review.
 
-![Add review]()
+![Add review](media/add_review-page.png)
 ![Add review]()
 
 - __Edit reviews__
-  - A edit and delete button that will only show up to the admin or the creator of that content.
+  - An edit and delete button that will only show up to the admin or the creator of that content.
   - Links to a form that auto completes with the info of the review selected.
 
-![Edit reviews]()
-![Edit reviews]()
+![Edit reviews](media/edit_review-page.png)
+![Edit reviews](media/profile-page-with-edit-and-delete.png)
+
+- __Change Password__
+  - A link in the profile page to change the current users password.
+
+![Change Password](media/change_password-page.png)
+
 
 
 ### Features Left to Implement
@@ -101,10 +110,13 @@ This is a sample of shots of what the site looks like on different devices.
 #### Desktop
 |Firefox 120.0.1|Chrome 120.0.6099.225|
 | ------------- | ------------------ |
-|![firefox index page]()|![chrome index page]()|
-|![firefox gallery page]()|![chrome gallery page]()|
-|![firefox commission page]()|![chrome commission page]()|
-|![firefox thankyou page]()|![chrome thankyou page]()|
+|![firefox home page]()|![chrome home page]()|
+|![firefox profile page]()|![chrome profile page]()|
+|![firefox add_review page]()|![chrome add_review page]()|
+|![firefox edit_review page]()|![chrome edit_review page]()|
+|![firefox change_password page]()|![chrome change_password page]()|
+|![firefox login page]()|![chrome login page]()|
+|![firefox register page]()|![chrome register page]()|
 
 ![responsive chrome and firefox Small]()
 ![responsive chrome and firefox Medium]()
@@ -113,10 +125,13 @@ This is a sample of shots of what the site looks like on different devices.
 
 ##### Safari iOS Phone 17.2
 
-![iPhone index page]()
-![iPhone gallery page]()
-![iPhone commission page]()
-![iPhone thankyou page]()
+![iPhone home page]()
+![iPhone profile page]()
+![iPhone add_review page]()
+![iPhone edit_review page]()
+![iPhone change_password page]()
+![iPhone login page]()
+![iPhone register page]()
 
 ### Validator Testing
 - HTML
@@ -128,10 +143,17 @@ This is a sample of shots of what the site looks like on different devices.
 
    - login.html: No errors were returned when passing through the official W3C validator<br> 
 
-   - create_account.html: No errors were returned when passing through the official W3C validator<br> 
+   - register.html: No errors were returned when passing through the official W3C validator<br> 
+
+   - profile.html: No errors were returned when passing through the official W3C validator<br> 
 
 - CSS 
     - style.css: No errors were returned when passing through offical Jigsaw validator<br> 
+
+- JS 
+    - script.js: No errors were returned when passing through offical Jigsaw validator<br> 
+
+    - password_validate.js: No errors were returned when passing through offical Jigsaw validator<br> 
 
 ### Manual Testing
 - I have tested that this page works in different web browsers.
@@ -351,9 +373,13 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 | ------- |
 | ![lighthouse result login page]() |
 
-| Create account |
+| Register |
 | ------- |
-| ![lighthouse result create account page]() |
+| ![lighthouse result register page]() |
+
+| Change Password |
+| ------- |
+| ![lighthouse result change_password page]() |
 
 ## Deployment
 
@@ -395,9 +421,11 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 
 - HTML, CSS and Javascript code help was taken from w3schools - [W3Schools](https://www.w3schools.com/)
 
-- Navbar from Materialize, buttons and form taken from Materialize (https://materializecss.com/)
+- Navbar, buttons, cards and form taken from Materialize (https://materializecss.com/)
 
 ### Media
 
 #### Icons
 - All page Icons - [Font Awesome](https://fontawesome.com/)
+
+- Book cover artwork taken from their wikipedia pages
