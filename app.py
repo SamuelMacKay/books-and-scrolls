@@ -41,7 +41,7 @@ def signup():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        if existing_user: 
+        if existing_user:
             flash("Sorry, that Username is already in use!")
             return redirect(url_for("signup"))
 
@@ -68,12 +68,12 @@ def login():
         if existing_user:
             # ensure hashed passowrd matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}!".format(
-                        request.form.get("username")))
-                    return redirect(
-                        url_for("profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}!".format(
+                    request.form.get("username")))
+                return redirect(
+                    url_for("profile", username=session["user"]))
 
             else:
                 # invalid password match
@@ -81,7 +81,7 @@ def login():
                 return redirect(url_for("login"))
 
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
     return render_template("login.html")
@@ -100,7 +100,8 @@ def change_password():
         existing_user = mongo.db.users.find_one(
             {"username": session["user"]})
 
-        if not existing_user or not check_password_hash(existing_user["password"], old_password):
+        if not existing_user or not check_password_hash(
+                existing_user["password"], old_password):
             flash("Old Password is incorrect!", "error")
             print("here")
             return redirect(url_for("change_password"))
@@ -114,7 +115,8 @@ def change_password():
         hash_password = generate_password_hash(new_password)
 
         mongo.db.users.update_one(
-            {"username": session["user"]}, {"$set": {"password": hash_password}})
+            {"username": session["user"]},
+            {"$set": {"password": hash_password}})
 
         flash("Password had been update!", "success")
 
@@ -131,16 +133,18 @@ def profile(username):
             {"username": session["user"]})["username"]
 
         # grab the list of reviews from the db
-        reviews = list(mongo.db.reviews.find({"user_created": session["user"]}))
+        reviews = list(
+            mongo.db.reviews.find({"user_created": session["user"]}))
 
-        return render_template("profile.html", username=username,  reviews=reviews)
+        return render_template(
+            "profile.html", username=username,  reviews=reviews)
 
-    return redirect(url_for("login")) 
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out!")
     session.pop("user")
     return redirect(url_for("login"))
@@ -169,7 +173,7 @@ def add_review():
 @app.route("/edit_review<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
-        if session["user"] == "admin": 
+        if session["user"] == "admin":
             submit = {
                 "title": request.form.get("title"),
                 "author": request.form.get("author"),
@@ -188,7 +192,8 @@ def edit_review(review_id):
                 "summary": request.form.get("summary"),
                 "cover_art": request.form.get("cover_art"),
             }
-        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {"$set": submit})
+        mongo.db.reviews.update_one(
+            {"_id": ObjectId(review_id)}, {"$set": submit})
         flash("Review has been successfully updated!")
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
