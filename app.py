@@ -90,20 +90,50 @@ def login():
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password():
     # allows logged in user to change password
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        old_password = request.form.get("old_password")
+        new_password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+        existing_user = mongo.db.users.find_one(
+            {"username": session["user"]})
+
+        if not existing_user or not check_password_hash(existing_user["password"], old_password):
+            flash("Old Password is incorrect!", "error")
+            print("here")
+            return redirect(url_for("change_password"))
+        print(old_password)
+        print(new_password)
+        print(confirm_password)
+        if new_password != confirm_password:
+            flash("Passwords don't match!", "error")
+            return redirect(url_for("change_password"))
+
+        hash_password = generate_password_hash(new_password)
+
+        mongo.db.users.update_one(
+            {"username": session["user"]}, {"$set": {"password": hash_password}})
+
+        flash("Password had been update!", "success")
+
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("change_password.html")
-    
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the sessions user's username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    if "user" in session:
+        
+        # grab the sessions user's username from the db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
 
-    # grab the list of reviews from the db
-    reviews = list(mongo.db.reviews.find())
+        # grab the list of reviews from the db
+        reviews = list(mongo.db.reviews.find({"user_created": session["user"]}))
 
-    if session["user"]:
         return render_template("profile.html", username=username,  reviews=reviews)
 
     return redirect(url_for("login")) 
