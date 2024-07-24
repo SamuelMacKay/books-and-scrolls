@@ -74,7 +74,7 @@ def login():
                         request.form.get("username")))
                     return redirect(
                         url_for("profile", username=session["user"]))
-                    
+
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -126,7 +126,6 @@ def change_password():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     if "user" in session:
-        
         # grab the sessions user's username from the db
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
