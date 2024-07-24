@@ -343,10 +343,10 @@ New code:
 ### User stories Testing
 |Story No.|Result|Story/ Evidence|
 | ------------- | ------------- | ------------- |
-|1|<font color="green"></font>|As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. <br><br> Evidence: <br> ![]()|
+|1|<font color="green"></font> |As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. <br><br> Evidence: <br> ![]()|
 |2|<font color="green">Test Pass</font> |As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. <br><br> Evidence: <br>  <br> ![]()|
-|3|*<font color="yellow"></font>* |As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information. <br><br> Evidence: <br>  <br>![]()||
-|4|*<font color="yellow"></font>* |As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br> <br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. <br><br> Evidence: <br>  <br>![]()|
+|3|<font color="green"></font> |As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information. <br><br> Evidence: <br>  <br>![]()||
+|4|<font color="green"></font> |As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br> <br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. <br><br> Evidence: <br>  <br>![]()|
 |5|<font color="green"></font> |As a current user, <br> To be able to check my profile, which shows me all my reviews, allows me to edit and delete them, as well as edit my password. <br> So I can keep track quickly of all my own reviews, and change my password if my passwords get comprimised. <br> <br> I know I am done when users have a profile page which links to all their own reviews, has all the profile information and has an option to edit password. <br><br> Evidence: <br>  <br> ![]()|
 
 ### Accessibility Testing
@@ -405,12 +405,17 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 4. Above the list of files click the button that says 'Gitpod'.
 
 ### Remote Deployment 
- The site was deployed to Github pages. If you have forked/cloned the repository the steps to deploy are:
- 1. On GitHub.com, navigate to your repository.
- 2. Navigate to the settings tab.
- 3. Click on the tab called 'pages' on the left hand side.
- 4. From the source drop down list under the heading Build and deployment, select main.
- 5. The page will hten provide the link to the website.
+ The prgoram was deployed to Heroku. If you have forked/cloned the repository the steps to deploy are:
+ 1. On Heroku, create a new app.
+ 2. input a name for your app
+ 3. Click on the settings tab
+ 4. Scroll to the Config Vars and click on the "Reveal Config Vars"
+ 5. Input CREDS into the key field and the content of the Google API creds file into the value area.
+ 6. Add another config, PORT into key and 8000 into value.
+ 7. Set the buildbacks to Python and NodeJs in that order .
+ 8. Link your Heroku app to you repository.
+ 9. Click on Deploy.
+ 10. The page will then provide the url to the python terminal.
 
  The live link can be found here - [Books and Scrolls](https://books-and-scrolls-mackay-6feed6e1aefd.herokuapp.com/)
 
