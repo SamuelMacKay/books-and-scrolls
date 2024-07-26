@@ -37,7 +37,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-star prefix light-green-text text-darken-2"></i>
                 <select id="rating" name="rating" class="validate" required>
-                    <option value="" disable>Rate out of 10!</option>
+                    <option value="" disabled>Rate out of 10!</option>
                     <option value="1" {% if review.rating == "1" %}selected{% endif %}>1</option>
                     <option value="2" {% if review.rating == "2" %}selected{% endif %}>2</option>
                     <option value="3" {% if review.rating == "3" %}selected{% endif %}>3</option>
