@@ -79,17 +79,23 @@ User Story Number - 5 <br>
 
 - __Add reviews__
 
-  - A form that gives you all the necessary information to fill out, to make an effective review.
-  - an affiliate link to a place to purchase the book directly from the review.
+  - A form that gives you all the necessary information to fill out, to make an 
+    effective review.
+  - an affiliate link to a place to purchase the book directly from the review 
+    option only shows up as admin.
 
 ![Add review](media/add_review-page.png)
-![Add review]()
+![Add review](media/add_review-not-admin.png)
 
 - __Edit reviews__
-  - An edit and delete button that will only show up to the admin or the creator of that content.
+  - An edit and delete button that will only show up to the admin or the creator 
+    of that content.
   - Links to a form that auto completes with the info of the review selected.
+  - an affiliate link to a place to purchase the book directly from the review 
+    option only shows up as admin.
 
 ![Edit reviews](media/edit_review-page.png)
+![Edit reviews](media/edit_review-not-admin.png)
 ![Edit reviews](media/profile-page-with-edit-and-delete.png)
 
 - __Change Password__
@@ -110,30 +116,65 @@ User Story Number - 5 <br>
 This is a sample of shots of what the site looks like on different devices. 
 
 #### Desktop
-|Firefox 120.0.1|Chrome 120.0.6099.225|
+|Firefox 128.0.2| Chrome 127.0.6533.72/73 / 23 July 2024|
 | ------------- | ------------------ |
-|![firefox home page]()|![chrome home page]()|
-|![firefox profile page]()|![chrome profile page]()|
-|![firefox add_review page]()|![chrome add_review page]()|
-|![firefox edit_review page]()|![chrome edit_review page]()|
-|![firefox change_password page]()|![chrome change_password page]()|
-|![firefox login page]()|![chrome login page]()|
-|![firefox register page]()|![chrome register page]()|
+|![firefox home page](media/firefox-home.png)|![chrome home page](media/chrome-home.png)|
+|![firefox profile page](media/firefox-profile.png)|![chrome profile page](media/chrome-profile.png)|
+|![firefox add_review page](media/firefox-add_review.png)|![chrome add_review page](media/chrome-add_review.png)|
+|![firefox edit_review page](media/firefox-edit_review.png)|![chrome edit_review page](media/chrome-edit_review.png)|
+|![firefox change_password page](media/firefox-change_password.png)|![chrome change_password page](media/chrome-change_password.png)|
+|![firefox login page](media/firefox-log-in.png)|![chrome login page](media/chrome-log-in.png)|
+|![firefox signup page](media/firefox-sign-up.png)|![chrome signup page](media/firefox-sign-up.png)|
 
-![responsive chrome and firefox Small]()
-![responsive chrome and firefox Medium]()
+| Firefox 128.0.2 medium | Chrome 127.0.6533.72/73 / 23 July 2024 medium |
+| ------------- | ------------------ |
+|![firefox home medium](media/firefox-medium-home.png)|![chrome home page medium](media/chrome-medium-home.png)|
+|![firefox profile page medium](media/firefox-medium-profile.png)|![chrome profile page medium](media/chrome-medium-profile.png)|
+|![firefox add_review page medium](media/firefox-medium-add_review.png)|![chrome add_review page medium](media/chrome-medium-add_review.png)|
+|![firefox edit_review page medium](media/firefox-medium-edit_review.png)|![chrome edit_review page medium](media/chrome-medium-edit_review.png)|
+|![firefox change_password page medium](media/firefox-medium-change_password.png)|![chrome change_password page medium](media/chrome-medium-change_password.png)|
+|![firefox login page medium](media/firefox-medium-log-in.png)|![chrome login page medium](media/chrome-medium-log-in.png)|
+|![firefox signup page medium](media/firefox-medium-sign-up.png)|![chrome signup page medium](media/chrome-medium-sign-up.png)|
+
+| Firefox 128.0.2 small | Chrome 127.0.6533.72/73 / 23 July 2024 small |
+| ------------- | ------------------ |
+|![firefox home small](media/firefox-small-home.png)|![chrome home page small](media/chrome-small-home.png)|
+|![firefox profile page small](media/firefox-small-profile.png)|![chrome profile page small](media/chrome-small-profile.png)|
+|![firefox add_review page small](media/firefox-small-add_review.png)|![chrome add_review page small](media/chrome-small-add_review.png)|
+|![firefox edit_review page small](media/firefox-small-edit_review.png)|![chrome edit_review page small](media/chrome-small-edit_review.png)|
+|![firefox change_password page small](media/firefox-small-change_password.png)|![chrome change_password page small](media/chrome-small-change_password.png)|
+|![firefox login page small](media/firefox-small-login-.png)|![chrome login page small](media/chrome-small-log-in.png)|
+|![firefox signup page small](media/firefox-small-sign-up.png)|![chrome signup page small](media/chrome-small-sign-up.png)|
 
 #### Mobile
 
-##### Safari iOS Phone 17.2
+##### Safari iOS Phone 17.5
+| iPhone home page |
+![iPhone home page](media/mobile-home.JPG)
 
-![iPhone home page]()
-![iPhone profile page]()
-![iPhone add_review page]()
-![iPhone edit_review page]()
-![iPhone change_password page]()
-![iPhone login page]()
-![iPhone register page]()
+| iPhone profile page |
+![iPhone profile page](media/mobile-profile.JPG)
+
+| iPhone add_review page |
+![iPhone add_review page](media/mobile-add_review.JPG)
+
+| iPhone edit_review page |
+![iPhone edit_review page](media/mobile-edit_review.JPG)
+
+| iPhone change_password page |
+![iPhone change_password page](media/mobile-change_password.JPG)
+
+| iPhone login page |
+![iPhone login page](media/mobile-log-in.JPG)
+
+| iPhone register page |
+![iPhone register page](media/mobile-sign-up.JPG)
+
+| iPhone nav logged in |
+![iPhone nav logged in](media/mobile-nav-logged-in.JPG)
+
+| iPhone nav logged out |
+![iPhone nav logged out](media/mobile-nav-logged-out.JPG)
 
 ### Validator Testing
 - HTML
