@@ -30,7 +30,13 @@ def get_reviews():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    # Use a regular expression to match partial words
+    regex_query = {"$regex": f".*{query}.*", "$options": "i"}  # 'i' for case-insensitive
+    reviews = list(mongo.db.reviews.find({"$or": [
+        {"title": regex_query},
+        {"author": regex_query},
+        {"genre": regex_query}
+    ]}))
     return render_template("reviews.html", reviews=reviews)
 
 
