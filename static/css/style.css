@@ -73,10 +73,10 @@
 }
 
 /*---------------------------------------------------------- button positioning */
-#fix-btn-location {
-    position: absolute;
-    bottom: 15px;
-    left: 24px;
+.fix-btn-location {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 24px !important;
 }
 
 /*---------------------------------------------------------- delete modal */
