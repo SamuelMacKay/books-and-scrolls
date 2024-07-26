@@ -353,14 +353,35 @@ $('.delete-btn').click(function(){
 
 #### Bug 5
 - my search function blocks stop words, so i cant find books titled things like "it"
+- added regex to my query search function.
 
 Old code:
 ```
+    @app.route("/search", methods=["GET", "POST"])
+    def search():
+        query = request.form.get("query")
+        reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
 
+        return render_template("reviews.html", reviews=reviews)
 ```
-New code:
+```
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    # Use a regular expression to match partial words
+    # iptions: 'i' for case-insensitive
+    regex_query = {"$regex": f".*{query}.*", "$options": "i"}
+    reviews = list(mongo.db.reviews.find({"$or": [
+        {"title": regex_query},
+        {"author": regex_query},
+        {"genre": regex_query}
+    ]}))
+    reviews_rating = list(mongo.db.reviews.find({"$or": [
+          {"rating": query}
+    ]}))
+    reviews = reviews + reviews_rating
 
-```
+    return render_template("reviews.html", reviews=reviews)
 
 ```
 
@@ -384,21 +405,8 @@ New code:
 
 ```
 
-#### Bug 7
-- on iOS my materialize option selector is duplicated, rather than hiding the non-styled one a it is meant to do.
-
-Old code:
-```
-
-```
-New code:
-
-```
-
-```
-
 ### Unfixed Bugs
- - n/a
+ - - on iOS my materialize option selector is duplicated, rather than hiding the non-styled one a it is meant to do. I have found no fix for it.
 
 ### User stories Testing
 |Story No.|Result|Story/ Evidence|
