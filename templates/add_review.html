@@ -11,7 +11,7 @@
                 <i class="fas fa-book prefix light-green-text text-darken-2"></i>
                 <input id="title" name="title" type="text" minlength="1"
                     maxlength="40" class="validate" required>
-                <label for="title">Title...</label>
+                <label class="font-black" for="title">Title...</label>
             </div>
         </div>
         <!-- add author -->
@@ -20,7 +20,7 @@
                 <i class="fas fa-user-circle prefix light-green-text text-darken-2"></i>
                 <input id="author" name="author" type="text" minlength="1"
                     maxlength="50" class="validate" required>
-                <label for="author">Author...</label>
+                <label class="font-black" for="author">Author...</label>
             </div>
         </div>
         <!-- add genre -->
@@ -28,7 +28,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-masks-theater prefix light-green-text text-darken-2"></i>
                 <input id="genre" name="genre" type="text" maxlength="40" class="validate" required>
-                <label for="genre">Genre...</label>
+                <label class="font-black" for="genre">Genre...</label>
             </div>
         </div>
         <!-- select rating */10 -->
@@ -48,6 +48,7 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
+                <label class="font-black" for="rating">Rating</label>
             </div>
         </div>
         <!-- add summary/description -->
@@ -56,7 +57,7 @@
                 <i class="fas fa-align-left prefix light-green-text text-darken-2"></i>
                 <textarea id="summary" name="summary" minlength="5" maxlength="800"
                     class="materialize-textarea validate" required></textarea>
-                <label for="summary">Summary...</label>
+                <label class="font-black" for="summary">Summary...</label>
             </div>
         </div>
         <!-- add image URL -->
@@ -69,7 +70,7 @@
                         select 'open image in a new tab' and copy/pasting the URL(the web address 
                         at the top of the page) here!"></i>
                 <input id="cover_art" name="cover_art" type="text" class="validate" required>
-                <label for="cover_art">Image URL...</label>
+                <label class="font-black" for="cover_art">Image URL...</label>
             </div>
         </div>
         <!-- add affiliate link -->
@@ -78,7 +79,7 @@
            <div class="input-field col s12">
                <i class="fas fa-link prefix light-green-text text-darken-2"></i>
                <input id="affiliate_link" name="affiliate_link" type="text" class="validate">
-               <label for="affiliate_link">Affilate Link...</label>
+               <label class="font-black" for="affiliate_link">Affilate Link...</label>
            </div>
        </div>
        {% endif %}
