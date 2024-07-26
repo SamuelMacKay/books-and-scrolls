@@ -16,24 +16,26 @@
 <body>
 
     <header>
-        <nav>
-            <!-- main nav bar -->
-            <div class="nav-wrapper light-green darken-1 text-shadow">
-                <a href="{{ url_for('get_reviews') }}" class="brand-logo uppercase"> <i class="fas fa-book-open hide-on-med-and-down"></i>Books and scrolls</a>
-                <a data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_reviews') }}">Home</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+                <!-- main nav bar -->
+                <div class="nav-wrapper light-green darken-1 text-shadow">
+                    <a href="{{ url_for('get_reviews') }}" class="brand-logo uppercase"> <i class="fas fa-book-open hide-on-med-and-down"></i>Books and scrolls</a>
+                    <a data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_reviews') }}">Home</a></li>
+                        {% if session.user %}
+                            <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
+                            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <!-- side nav bar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-green-text text-darken-1">Books and Scrolls</h4></li>
