@@ -135,17 +135,17 @@ This is a sample of shots of what the site looks like on different devices.
 
 ### Validator Testing
 - HTML
-    - home.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+    - home.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fget_reviews)|<br> 
 
-   - add_review.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+   - add_review.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
 
-   - edit_review.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+   - edit_review.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
 
-   - login.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+   - login.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Flogin)|<br> 
 
-   - register.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+   - register.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fsignup)|<br> 
 
-   - profile.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
+   - profile.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
 
 - CSS 
     - style.css: No errors were returned when passing through offical Jigsaw validator ![](media/css-validation.png)|<br> 
