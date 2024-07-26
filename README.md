@@ -153,7 +153,10 @@ This is a sample of shots of what the site looks like on different devices.
 - JS 
     - script.js: No errors were returned when passing through offical Jigsaw validator<br> 
 
-    - password_validate.js: No errors were returned when passing through offical Jigsaw validator<br> 
+    - password_validate.js: No errors were returned when passing through offical Jigsaw validator ![](media/app.py validation.png)|<br> 
+
+- Python
+    - app.py:  No errors were returned when passing through CI Python Linter ![](media/app.py validation.png)|<br> 
 
 ### Manual Testing
 - I have tested that this page works in different web browsers.
@@ -343,8 +346,8 @@ New code:
 ### User stories Testing
 |Story No.|Result|Story/ Evidence|
 | ------------- | ------------- | ------------- |
-|1|<font color="green"></font> |As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. <br><br> Evidence: <br> ![]()|
-|2|<font color="green">Test Pass</font> |As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. <br><br> Evidence: <br>  <br> ![]()|
+|1|<font color="green"></font> |As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. <br><br> Evidence: <br> ![](media/story-1-evidence.png)|
+|2|<font color="green">Test Pass</font> |As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. <br><br> Evidence: <br>  <br> ![](media/story-2-evidence.png)|
 |3|<font color="green"></font> |As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information. <br><br> Evidence: <br>  <br>![]()||
 |4|<font color="green"></font> |As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br> <br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. <br><br> Evidence: <br>  <br>![]()|
 |5|<font color="green"></font> |As a current user, <br> To be able to check my profile, which shows me all my reviews, allows me to edit and delete them, as well as edit my password. <br> So I can keep track quickly of all my own reviews, and change my password if my passwords get comprimised. <br> <br> I know I am done when users have a profile page which links to all their own reviews, has all the profile information and has an option to edit password. <br><br> Evidence: <br>  <br> ![]()|
