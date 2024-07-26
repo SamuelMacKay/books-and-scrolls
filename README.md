@@ -57,6 +57,8 @@ User Story Number - 5 <br>
 
 ![Nav Bar](media/logged-in-navbar.png)
 ![Nav Bar](media/logged-out-navbar.png)
+![Nav Bar](media/mobile-nav-logged-in.png)
+![Nav Bar](media/mobile-nav-logged-out.png)
 
 - __Home page__
 
@@ -137,15 +139,15 @@ This is a sample of shots of what the site looks like on different devices.
 - HTML
     - home.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fget_reviews)|<br> 
 
-   - add_review.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
+   - add_review.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fadd_review)|<br> 
 
-   - edit_review.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
+   - edit_review.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fedit_review669e117794c39a3891153de0)|<br> 
 
    - login.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Flogin)|<br> 
 
    - register.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fsignup)|<br> 
 
-   - profile.html: No errors were returned when passing through the official W3C validator [validation]()|<br> 
+   - profile.html: No errors were returned when passing through the official W3C validator [validation](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fbooks-and-scrolls-mackay-6feed6e1aefd.herokuapp.com%2Fprofile%2Fmackayver)|<br> 
 
 - CSS 
     - style.css: No errors were returned when passing through offical Jigsaw validator ![](media/css-validation.png)|<br> 
@@ -201,14 +203,13 @@ CSS:
 }
 ```
 #### Bug 3 
-- If the title, author or author doesnt have any spaces, but is capped out on the word count, the word will stretch out over the card.
-- made a new class with a CSS style to truncate long words, and added a tool tip that reveals the whole word when overed over
+- If the title, author or genre doesnt have any spaces, but is capped out on the character count, the word will stretch out over the card.
+- made a new class with a CSS style to truncate long words.
 
 Old code:
 ```
 <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                <h4 class="tooltipped" data-position="top" data-tooltip="{{ review.title.title() }}">{{ review.title.title() }}<i class="fas fa-chevron-up right"></i></h4>
                             </span>
                             <p><strong>Author:</strong> {{ review.author.title() }}</p>
                             <p><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
@@ -225,15 +226,16 @@ New code:
 ```
 <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                <h4 class="tooltipped truncate" data-position="top" data-tooltip="{{ review.title.title() }}">{{ review.title.title() }}<i class="fas fa-chevron-up right"></i></h4>
-                            </span>
+                                <i class="fas fa-bars right"></i>
+                            <h5 class="truncate"><strong>{{ review.title.title() }}</strong></h5>
+                            <div class="spacing"></div>
                             <p class="truncate"><strong>Author:</strong> {{ review.author.title() }}</p>
                             <p class="truncate"><strong>Genre:</strong> {{ review.genre.capitalize() }}</p>
                             <p><strong>Rating:</strong> {{ review.rating }}/10</p>
                             <p class="truncate"><strong>Created by:</strong> {{ review.user_created.capitalize() }}</p>
                             {% if review.affiliate_link %}
-                            <br>
-                            <a href="{{ review.affiliate_link }}" target="_blank" class="uppercase">Buy Now!</a>
+                            <div class="spacing"></div>
+                            <a href="{{ review.affiliate_link }}" target="_blank" class="fix-btn-location uppercase btn light-green darken-2">Buy Now!</a>
                             {% endif %}
                         </div>
 ```
@@ -347,10 +349,10 @@ New code:
 |Story No.|Result|Story/ Evidence|
 | ------------- | ------------- | ------------- |
 |1|<font color="green"></font> |As the owner of the site, <br> I want people to be able to find books that interest them and have an affiliate link to purchase it <br> So people can find new books to read, and i can earn some money off of the service <br><br> I know I am done when I have book reviews that have relevent links to purchase attachted to them. <br><br> Evidence: <br> ![](media/story-1-evidence.png)|
-|2|<font color="green">Test Pass</font> |As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. <br><br> Evidence: <br>  <br> ![](media/story-2-evidence.png)|
-|3|<font color="green"></font> |As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information. <br><br> Evidence: <br>  <br>![]()||
-|4|<font color="green"></font> |As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br> <br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. <br><br> Evidence: <br>  <br>![]()|
-|5|<font color="green"></font> |As a current user, <br> To be able to check my profile, which shows me all my reviews, allows me to edit and delete them, as well as edit my password. <br> So I can keep track quickly of all my own reviews, and change my password if my passwords get comprimised. <br> <br> I know I am done when users have a profile page which links to all their own reviews, has all the profile information and has an option to edit password. <br><br> Evidence: <br>  <br> ![]()|
+|2|<font color="green">Test Pass</font> |As a first time user, <br> I want to be able to easily see some book recommendations and reviews <br> So I can start a new series or novel and find a place to buy it <br><br> I know I am done when I have a list of novels/series that are easily viewed and have all the info needed at a quick glance. <br><br> Evidence: <br><br> ![](media/story-2-evidence.png)|
+|3|<font color="green"></font> |As a repeat user, <br> I want to be able to add my own recommendations for books that I have read and enjoyed <br> So I can introduce as many other people to great books as I can <br><br> I know I am done when I can create and account, add book reviews, and edit my own reviews with an easy to use form that helps me input all the needed information. <br><br> Evidence: <br><br>![](media/story-3-evidence.png)||
+|4|<font color="green"></font> |As the owner of the site, <br> I want to have all reviews editable by me or the creater of the review <br> so I can make necessery changes to any reviews, and that no one else can change other peoples reviews <br><br> I know I am done when only the logged in user or the admin can edit and make changes to the reviews. <br><br> Evidence: <br><br> ![](media/story-4-evidence.png)|
+|5|<font color="green"></font> |As a current user, <br> To be able to check my profile, which shows me all my reviews, allows me to edit and delete them, as well as edit my password. <br> So I can keep track quickly of all my own reviews, and change my password if my passwords get comprimised. <br> <br> I know I am done when users have a profile page which links to all their own reviews, has all the profile information and has an option to edit password. <br><br> Evidence: <br><br> ![](media/story-5-evidence.png)|
 
 ### Accessibility Testing
 
@@ -358,31 +360,31 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 
 | Home  |
 | ------- |
-| ![lighthouse result home page]() |
+| ![lighthouse result home page](media/get_reviews-lighthouse.png) |
 
 | Add review |
 | ------- |
-| ![lighthouse result add_review page]() |
+| ![lighthouse result add_review page](media/add_reviews-lighthouse.png) |
 
 | Edit review | 
 | ------- |
-| ![lighthouse result edit_review page]() |
+| ![lighthouse result edit_review page](media/edit_reviews-lighthouse.png) |
 
 | Profile |
 | ------- |
-| ![lighthouse result profile page]() |
+| ![lighthouse result profile page](media/profile-lighthouse.png) |
 
 | Log in |
 | ------- |
-| ![lighthouse result login page]() |
+| ![lighthouse result login page](media/login-lighthouse.png) |
 
 | Register |
 | ------- |
-| ![lighthouse result register page]() |
+| ![lighthouse result register page](media/signup-lighthouse.png) |
 
 | Change Password |
 | ------- |
-| ![lighthouse result change_password page]() |
+| ![lighthouse result change_password page](media/change_password-lighthouse.png) |
 
 ## Deployment
 
@@ -436,4 +438,4 @@ To check the colors and fonts, I used Lighthouse in the Google devtools. The res
 #### Icons
 - All page Icons - [Font Awesome](https://fontawesome.com/)
 
-- Book cover artwork taken from their wikipedia pages
+- Book cover artwork taken from their wikipedia pages [Wikipedia](https://www.wikipedia.org/)
