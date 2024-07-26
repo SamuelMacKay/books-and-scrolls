@@ -102,7 +102,7 @@ def change_password():
 
         if not existing_user or not check_password_hash(
                 existing_user["password"], old_password):
-            flash("Old Password is incorrect!", "error")
+            flash("Old Password is incorrect!")
             print("here")
             return redirect(url_for("change_password"))
         print(old_password)
@@ -118,7 +118,7 @@ def change_password():
             {"username": session["user"]},
             {"$set": {"password": hash_password}})
 
-        flash("Password had been update!", "success")
+        flash("Password had been updated!")
 
         return redirect(url_for("profile", username=session["user"]))
 
