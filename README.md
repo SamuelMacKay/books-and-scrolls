@@ -135,28 +135,28 @@ This is a sample of shots of what the site looks like on different devices.
 
 ### Validator Testing
 - HTML
-    - home.html: No errors were returned when passing through the official W3C validator<br> 
+    - home.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
-   - add_review.html: No errors were returned when passing through the official W3C validator<br> 
+   - add_review.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
-   - edit_review.html: No errors were returned when passing through the official W3C validator<br> 
+   - edit_review.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
-   - login.html: No errors were returned when passing through the official W3C validator<br> 
+   - login.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
-   - register.html: No errors were returned when passing through the official W3C validator<br> 
+   - register.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
-   - profile.html: No errors were returned when passing through the official W3C validator<br> 
+   - profile.html: No errors were returned when passing through the official W3C validator ![]()|<br> 
 
 - CSS 
-    - style.css: No errors were returned when passing through offical Jigsaw validator<br> 
+    - style.css: No errors were returned when passing through offical Jigsaw validator ![](media/css-validation.png)|<br> 
 
 - JS 
-    - script.js: No errors were returned when passing through offical Jigsaw validator<br> 
+    - script.js: No errors were returned when passing through offical Jigsaw validator ![](media/script-js-validation.png)|<br> 
 
-    - password_validate.js: No errors were returned when passing through offical Jigsaw validator ![](media/app.py validation.png)|<br> 
+    - password_validate.js: No errors were returned when passing through offical Jigsaw validator ![](media/password_validator-js-validation.png)|<br> 
 
 - Python
-    - app.py:  No errors were returned when passing through CI Python Linter ![](media/app.py validation.png)|<br> 
+    - app.py:  No errors were returned when passing through CI Python Linter ![](media/app-py-validation.png)<br>
 
 ### Manual Testing
 - I have tested that this page works in different web browsers.
