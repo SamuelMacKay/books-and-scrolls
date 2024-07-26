@@ -31,12 +31,18 @@ def get_reviews():
 def search():
     query = request.form.get("query")
     # Use a regular expression to match partial words
-    regex_query = {"$regex": f".*{query}.*", "$options": "i"}  # 'i' for case-insensitive
+    # iptions: 'i' for case-insensitive
+    regex_query = {"$regex": f".*{query}.*", "$options": "i"}
     reviews = list(mongo.db.reviews.find({"$or": [
         {"title": regex_query},
         {"author": regex_query},
         {"genre": regex_query}
     ]}))
+    reviews_rating = list(mongo.db.reviews.find({"$or": [
+          {"rating": query}
+    ]}))
+    reviews = reviews + reviews_rating
+
     return render_template("reviews.html", reviews=reviews)
 
 
