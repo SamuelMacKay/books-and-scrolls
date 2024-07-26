@@ -199,13 +199,14 @@ This is a sample of shots of what the site looks like on different devices.
     - password_validate.js: No errors were returned when passing through offical Jigsaw validator ![](media/password_validator-js-validation.png)|<br> 
 
 - Python
-    - app.py:  No errors were returned when passing through CI Python Linter ![](media/app-py-validation.png)<br>
+    - app.py:  No errors were returned when passing through CI Python Linter ![](media/app.py-validation.png)<br>
 
 ### Manual Testing
 - I have tested that this page works in different web browsers.
 - I have tested that the project is responsive and works with different device sizes. It looks good and functions as normal. 
 - I have tested all links, internal and external. They go to the correct destination and open in the correct way. 
 - I have tested that all text and fonts are readable and easy to understand.
+- I have asked my partner to use the website to see what a first time user would experience.
 
 ### Bugs
 #### Bug 1
@@ -380,6 +381,19 @@ New code:
 <div class="row flashes s12">
                         <h4 class="light-green lighten-4 center-align">{{ message }}</h4>
                     </div>
+
+```
+
+#### Bug 7
+- on iOS my materialize option selector is duplicated, rather than hiding the non-styled one a it is meant to do.
+
+Old code:
+```
+
+```
+New code:
+
+```
 
 ```
 
